@@ -6,10 +6,31 @@ from selenium.webdriver.common.by import By
 
 options = webdriver.ChromeOptions()
 
+
+options = webdriver.ChromeOptions()
+
 options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
 options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_argument("--disable-features=SameSiteByDefaultCookies")
+options.add_argument("--disable-features=CrossSiteDocumentBlockingIfIsolating")
+options.add_argument("--disable-features=CrossSiteDocumentBlockingAlways")
+options.add_argument("--disable-features=SameSiteDefaultChecksMethodRigorously")
+options.add_argument("--headless")  # Опционально: запуск в безголовом режиме
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-browser-side-navigation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-popup-blocking")
+options.add_argument("--ignore-certificate-errors")
+options.add_argument("--ignore-ssl-errors")
 
-options.add_argument("--headless")
+# Установка параметров куки
+options.add_argument("user-data-dir=/path/to/your/profile")  # Путь к вашему профилю Chrome
+options.add_argument("profile-directory=ProfileName")  # Имя профиля Chrome
+options.add_argument("cookie=domain=.mvideo.ru; SameSite=None; Secure")  # Установка куки с доменом .mvideo.ru
+
 
 
 s = Service(executable_path="/path/chromedriver")
@@ -43,7 +64,7 @@ try:
             '__SourceTracker', 'admitad_deduplication_cookie', 'SMSError', 'authError', 'BIGipServericerock-prod',
             'bIPs', 'mindboxDeviceUUID', 'directCrm-session', '_js_p', '_jhash', '_jua', '_sp_ses.d61c', '_sp_id.d61c',
             '_ym_isad', '_ga', 'tmr_detect', 'gsscgib-w-mvideo', 'fgsscgib-w-mvideo', '_hash', 'gssc218',
-            'cfidsgib-w-mvideo', '_ga_CFMZTSS5FM', '_ga_BNX5WPP3YK'
+            'cfidsgib-w-mvideo', '_ga_CFMZTSS5FM', '_ga_BNX5WPP3YK',
         ]
         cookies_dict = {}
 
@@ -51,10 +72,10 @@ try:
             found_cookie = next((cookie for cookie in cookies if cookie['name'] == cookie_name), None)
             if found_cookie:
                 cookies_dict[cookie_name] = found_cookie['value']
-            # else:
-            #     print(f"Куки по имени '{cookie_name}' не найден")
-
-        print(cookies_dict)
+        #     else:
+        #          print(f"Куки по имени '{cookie_name}' не найден")
+        #
+        # print(cookies_dict)
 
 
         time.sleep(2)
