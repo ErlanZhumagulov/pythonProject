@@ -9,7 +9,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
 options.add_argument("--disable-blink-features=AutomationControlled")
 
-#options.add_argument("--headless")
+options.add_argument("--headless")
 
 
 s = Service(executable_path="/path/chromedriver")
@@ -25,7 +25,7 @@ try:
     print("Количество страниц " + str(pagesCount))
     n = 1
     while n <= pagesCount:
-        driver.get("https://www.mvideo.ru/televizory-i-cifrovoe-tv-1/televizory-65/f/tolko-v-nalichii=da?from=under_search&page=" + str(n))
+        #driver.get("https://www.mvideo.ru/televizory-i-cifrovoe-tv-1/televizory-65/f/tolko-v-nalichii=da?from=under_search&page=" + str(n))
         cookies = driver.get_cookies()
         #print(cookies)
         cookies_to_extract = [

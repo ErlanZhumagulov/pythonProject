@@ -70,25 +70,25 @@ def get_data(page, cookies_dict):
         'authError': '',
         'BIGipServericerock-prod': '3187989514.20480.0000',
         'bIPs': '-957002303',
+        '_ym_isad': '2',
         'mindboxDeviceUUID': 'dac89675-e94a-4a4a-bf07-7765e74f9ea9',
         'directCrm-session': '%7B%22deviceGuid%22%3A%22dac89675-e94a-4a4a-bf07-7765e74f9ea9%22%7D',
-        '__js_p_': '641,1800,0,1,0',
-        '__jhash_': '629',
+        '__js_p_': '590,1800,0,1,0',
+        '__jhash_': '1103',
         '__jua_': 'Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F112.0.0.0%20YaBrowser%2F23.5.4.674%20Yowser%2F2.5%20Safari%2F537.36',
         '_sp_ses.d61c': '*',
-        '_sp_id.d61c': '141bcadc-d675-4b25-8bd9-1c9dcbecb117.1688477596.13.1689174642.1689171415.ca6b15eb-0dff-4797-80ec-35ed64d7e532.66d7176f-f5f5-4ac7-879f-6d4d565bce64.d6a6754f-bc8b-46a4-b80a-75bf4894b807.1689174642066.5',
-        '_ym_isad': '2',
+        '_sp_id.d61c': '141bcadc-d675-4b25-8bd9-1c9dcbecb117.1688477596.14.1689177591.1689174758.05824003-2bc4-422b-be28-b1e5f98fd2d5.ca6b15eb-0dff-4797-80ec-35ed64d7e532.d4ebcc54-a5b6-4b4f-8b49-34bd45006fd4.1689177590722.5',
         '_ga': 'GA1.2.1703219727.1688477596',
-        'tmr_detect': '1%7C1689174646473',
-        'gsscgib-w-mvideo': 'rc9/RK04juTGIhM6aebZ6GvszI7VYDss6vBedxq7yvQb0e0NiY4i57LM0Jn3qlSmCAzZFEgq6RFII4XJoSewwU4THTQxG4PGHoz8/6bIT5eGcDLVHLA1VGabb3wrBCNBMWYp+r0FOOPmu7J6nuNCH8NzEUkSs1IydKmEVIVf4LBg0OB/75/eSzhK0Wh4QyB+8kofVaSVhuBxDazvLvjsrsxSQsryGX2TCGoUtxkc/ELniwFzD8o+o9JLP96jmhQdlfW002z5pTZEqSv8938d',
-        'gsscgib-w-mvideo': 'rc9/RK04juTGIhM6aebZ6GvszI7VYDss6vBedxq7yvQb0e0NiY4i57LM0Jn3qlSmCAzZFEgq6RFII4XJoSewwU4THTQxG4PGHoz8/6bIT5eGcDLVHLA1VGabb3wrBCNBMWYp+r0FOOPmu7J6nuNCH8NzEUkSs1IydKmEVIVf4LBg0OB/75/eSzhK0Wh4QyB+8kofVaSVhuBxDazvLvjsrsxSQsryGX2TCGoUtxkc/ELniwFzD8o+o9JLP96jmhQdlfW002z5pTZEqSv8938d',
-        'fgsscgib-w-mvideo': 'UyTqe40b7290774398c217c4b6f54c6af995c75b',
-        'fgsscgib-w-mvideo': 'UyTqe40b7290774398c217c4b6f54c6af995c75b',
-        '__hash_': '073d2cf983fc012a675ca9d88a40ccd6',
+        'tmr_detect': '1%7C1689177594271',
+        'gsscgib-w-mvideo': 'gCI5VNFzc7PfJ+K3imd6WbVK7tjjAuS07/8hu9KX1vdGLKCVjztgrN41zAaXmpFsB12WfXdTvPZXsPGD1vLS9D2Ux2GkuwtLplxobhgavTNJvY9FQOqmSUwkJLCsYy5YF4pssDZC15JrRfrodTvdFC0GLRuq5RZZ3gcMvqecEnXvjuM0+gSc5ZtgXqG4ls1TX7ZVxBP/ckvzGlkRH/Xqq9LtqY5W9z+m5eYANoqqAGl1PwW9uKfH0oCVeXxK3D8GM8S5OAFs3vXqPG2IEtM/',
+        'gsscgib-w-mvideo': 'gCI5VNFzc7PfJ+K3imd6WbVK7tjjAuS07/8hu9KX1vdGLKCVjztgrN41zAaXmpFsB12WfXdTvPZXsPGD1vLS9D2Ux2GkuwtLplxobhgavTNJvY9FQOqmSUwkJLCsYy5YF4pssDZC15JrRfrodTvdFC0GLRuq5RZZ3gcMvqecEnXvjuM0+gSc5ZtgXqG4ls1TX7ZVxBP/ckvzGlkRH/Xqq9LtqY5W9z+m5eYANoqqAGl1PwW9uKfH0oCVeXxK3D8GM8S5OAFs3vXqPG2IEtM/',
+        'fgsscgib-w-mvideo': 'eefIa1b2c790b5bed591fab9a36a656d0d243b7e',
+        'fgsscgib-w-mvideo': 'eefIa1b2c790b5bed591fab9a36a656d0d243b7e',
+        '__hash_': '79a78a1bccd1612aa75be8188dd84f73',
         'gssc218': '',
-        'cfidsgib-w-mvideo': 'D73VF2XLt8bME3vvhLvU8yRHvFPHNsQHKolYCTJuu3FujW27i4IxoUWlMbVSUKB49nzk3i/AbLwmSxenIb7uKSeKbMXS3T8iIYOOfgjUq/CDr27ccIUgOT59LnAUd34Oz6+coXy70E9SbpYt5ojkM1bL4ePiveEF4xdx0zc=',
-        '_ga_CFMZTSS5FM': 'GS1.1.1689174635.12.1.1689174754.0.0.0',
-        '_ga_BNX5WPP3YK': 'GS1.1.1689174635.12.1.1689174754.60.0.0',
+        'cfidsgib-w-mvideo': 'rUn0z78pGrp4hvmUcdSwjsQnE5Lqcax86Xt08PnCABX7sC+GEoX0mhaX5+2WLJ3eZzyiYvYKtFefU9kQmOc77TL0uDOgGBfzHjH5UClDooz1EHiWw1cbxdPhJZbGnPIXNsIwFZ1OuenUhhL6T5IiZEcj3Vj8QBrxaqLkq7o=',
+        '_ga_BNX5WPP3YK': 'GS1.1.1689177590.13.0.1689177656.60.0.0',
+        '_ga_CFMZTSS5FM': 'GS1.1.1689177590.13.0.1689177656.0.0.0',
     }
 
     cookies.update(cookies_dict)
@@ -180,9 +180,9 @@ def get_data(page, cookies_dict):
                 prices = items_prices[product_id]
                 data.append([item.get('name'), prices])
 
-        print(data)
+        #print(data)
 
-        with open('output.csv', 'a', newline='') as file:
+        with open('output.csv', 'a', encoding='utf-8', newline='') as file:
             writer = csv.writer(file)
 
             # Записываем данные в файл
@@ -190,7 +190,7 @@ def get_data(page, cookies_dict):
             print("Данные успешно записаны в файл CSV.")
 
     except requests.exceptions.ReadTimeout:
-        print("Произошла ошибка чтения тайм-аута (Read timed out).")
+        #print("Произошла ошибка чтения тайм-аута (Read timed out).")
         get_data(page, cookies_dict)
 
 # def main():
