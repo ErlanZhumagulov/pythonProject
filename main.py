@@ -15,19 +15,27 @@ s = Service(executable_path="/path/chromedriver")
 driver = webdriver.Chrome(service=s, options=options)
 
 try:
-    driver.get("https://www.mvideo.ru/televizory-i-cifrovoe-tv-1/televizory-65?from=under_search")
+    driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main")
 
     time.sleep(2)
+    n = 1
 
-    pagesNumbers = driver.find_elements(By.CLASS_NAME, "page-item")
-    pagesCount = int(pagesNumbers[-2].find_element(By.TAG_NAME, 'a').text)
-    print("Количество страниц " + str(pagesCount))
+    try:
+        pagesNumbers = driver.find_elements(By.CLASS_NAME, "page-item")
+        pagesCount = int(pagesNumbers[-2].find_element(By.TAG_NAME, 'a').text)
+        print("Количество страниц " + str(pagesCount))
+    except:
+        pagesCount = 1
+        pass
 
     dict_prods = {}
 
-    n = 1
+
     while n <= pagesCount:
-        driver.get("https://www.mvideo.ru/televizory-i-cifrovoe-tv-1/televizory-65/f/tolko-v-nalichii=da?from=under_search&page=" + str(n))
+        if(pagesCount > 1):
+            driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main" + str(n))
+        else:
+            driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main")
 
         time.sleep(2)
 
@@ -71,11 +79,12 @@ try:
         print(len(price_array))
         print(len(name_array))
 
-        for i in range(len(items)):
-            notification_element = items[i].find_elements(By.CLASS_NAME, 'product-notification_black')
-            if notification_element:
-                print("Элемент с классом 'product-notification_black' найден")
-                price_array.insert(i, 'Нет в наличии')
+        for i in range(len(name_array)):
+            if(pagesCount > 1):
+                notification_element = items[i].find_elements(By.CLASS_NAME, 'product-notification_black')
+                if notification_element:
+                    print("Элемент с классом 'product-notification_black' найден")
+                    price_array.insert(i, 'Нет в наличии')
 
 
             dict_prods[name_array[i]] = price_array[i]
