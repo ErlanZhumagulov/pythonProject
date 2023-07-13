@@ -85,12 +85,6 @@ try:
 
             dict_prods[name_array[i]] = price_array[i]
 
-        # Вывод массива значений содержимого
-
-
-
-        #print(items)
-
         print('Цикл выполнился', n, 'раз(а)')
         n = n + 1
 
