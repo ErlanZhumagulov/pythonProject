@@ -9,18 +9,18 @@ options = webdriver.ChromeOptions()
 
 options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
 options.add_argument("--disable-blink-features=AutomationControlled")
-#options.add_argument("--headless")  # Опционально: запуск в безголовом режиме
+options.add_argument("--headless")  # Опционально: запуск в безголовом режиме
 
 s = Service(executable_path="/path/chromedriver")
 driver = webdriver.Chrome(service=s, options=options)
 
+str_search = "https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118?reff=menu_main"
 try:
-    driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118?reff=menu_main")
+    driver.get(str_search)
 
     time.sleep(2)
 
     try:
-        time.sleep(1)
         print("Ща")
         button = driver.find_element(By.CLASS_NAME, 'location.ng-tns-c110-1')
 
@@ -29,7 +29,7 @@ try:
         # Нажатие на кнопку
         button.click()
 
-        time.sleep(3)
+        time.sleep(0.3)
         cities = driver.find_elements(By.CLASS_NAME, "location-select__location")
         for select_sity in cities:
             if select_sity.text == "Саратов":
@@ -44,28 +44,22 @@ try:
 
     try:
         pagesNumbers = driver.find_elements(By.CLASS_NAME, "page-item")
-        print("нормас")
         pagesCount = int(pagesNumbers[-2].find_element(By.TAG_NAME, 'a').text)
         print("Количество страниц " + str(pagesCount))
     except:
-        print("Че-т не то")
         pagesCount = 1
         pass
 
-
     dict_prods = {}
 
-
     while n <= pagesCount:
+        flag_next_iteration = 1
         if(pagesCount > 1):
-            driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118/f/tolko-v-nalichii=da?reff=menu_main&page=" + str(n))
+            driver.get(str_search + "&page=" + str(n))
         else:
-            driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118/f/tolko-v-nalichii=da?reff=menu_main&page=")
+            driver.get(str_search)
 
-        time.sleep(2)
-
-        page_height = driver.execute_script("return document.body.scrollHeight")
-        print(page_height)
+        time.sleep(0.5)
 
         last_page_stopper = 0
         while True:
@@ -86,8 +80,15 @@ try:
                 break
 
             last_page_stopper = last_page_stopper + 1
-            if n == pagesCount and last_page_stopper == 24:
+            if n == pagesCount and last_page_stopper == 50:
                 break
+
+            if last_page_stopper == 51:
+                flag_next_iteration = 0
+                print("Сработало превышение")
+                print(len(items))
+                break
+
 
         items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
         prices = driver.find_elements(By.CLASS_NAME, 'price__main-value')
@@ -115,7 +116,9 @@ try:
             dict_prods[name_array[i]] = price_array[i]
 
         print('Цикл выполнился', n, 'раз(а)')
-        n = n + 1
+
+        if flag_next_iteration == 1:
+            n = n + 1
 
     filename = 'parse_result.csv'
 
