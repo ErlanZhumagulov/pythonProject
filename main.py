@@ -63,6 +63,7 @@ try:
         name_array = [name.text for name in names]
         for i in range(len(name_array)):
             name_array[i] = name_array[i].replace('"', '').replace("'", '')
+
         print("Ниже цены")
         print(name_array)
         print(price_array)
