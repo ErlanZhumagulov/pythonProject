@@ -9,7 +9,7 @@ options = webdriver.ChromeOptions()
 
 options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
 options.add_argument("--disable-blink-features=AutomationControlled")
-options.add_argument("--headless")  # Опционально: запуск в безголовом режиме
+#options.add_argument("--headless")  # Опционально: запуск в безголовом режиме
 
 s = Service(executable_path="/path/chromedriver")
 driver = webdriver.Chrome(service=s, options=options)
@@ -18,6 +18,28 @@ try:
     driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main")
 
     time.sleep(2)
+
+    try:
+        time.sleep(5)
+        print("Ща")
+        button = driver.find_element(By.CLASS_NAME, 'location.ng-tns-c110-1')
+
+        #button = driver.find_element(By.CLASS_NAME, "location ng-tns-c110-1")
+        print("Нажимаем кнопку выбора регионов")
+        # Нажатие на кнопку
+        button.click()
+
+        time.sleep(3)
+        cities = driver.find_elements(By.CLASS_NAME, "location-select__location")
+        for select_sity in cities:
+            if select_sity.text == "Саратов":
+                button = select_sity
+                print("Был выбран Саратов")
+
+        button.click()
+    except:
+        pass
+
     n = 1
 
     try:
