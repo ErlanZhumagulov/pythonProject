@@ -34,9 +34,6 @@ try:
         page_height = driver.execute_script("return document.body.scrollHeight")
         print(page_height)
 
-        item_count_buf = 0
-        # Получение высоты страницы
-
         last_page_stopper = 0
         while True:
             try:
@@ -48,11 +45,8 @@ try:
 
             # Прокрутка на 100 пикселей вверх
             driver.execute_script("window.scrollBy(0, +300);")
-
             # Пауза для прогрузки элементов
             time.sleep(0.2)
-
-
 
             items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
             if len(items) == 24:
