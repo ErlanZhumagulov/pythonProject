@@ -15,12 +15,12 @@ s = Service(executable_path="/path/chromedriver")
 driver = webdriver.Chrome(service=s, options=options)
 
 try:
-    driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main")
+    driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118?reff=menu_main")
 
     time.sleep(2)
 
     try:
-        time.sleep(5)
+        time.sleep(1)
         print("Ща")
         button = driver.find_element(By.CLASS_NAME, 'location.ng-tns-c110-1')
 
@@ -39,25 +39,28 @@ try:
         button.click()
     except:
         pass
-
+    time.sleep(0.3)
     n = 1
 
     try:
         pagesNumbers = driver.find_elements(By.CLASS_NAME, "page-item")
+        print("нормас")
         pagesCount = int(pagesNumbers[-2].find_element(By.TAG_NAME, 'a').text)
         print("Количество страниц " + str(pagesCount))
     except:
+        print("Че-т не то")
         pagesCount = 1
         pass
+
 
     dict_prods = {}
 
 
     while n <= pagesCount:
         if(pagesCount > 1):
-            driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main" + str(n))
+            driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118/f/tolko-v-nalichii=da?reff=menu_main&page=" + str(n))
         else:
-            driver.get("https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main")
+            driver.get("https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118/f/tolko-v-nalichii=da?reff=menu_main&page=")
 
         time.sleep(2)
 
