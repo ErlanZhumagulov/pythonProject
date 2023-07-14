@@ -14,14 +14,14 @@ options.add_argument("--headless")  # Опционально: запуск в б
 s = Service(executable_path="/path/chromedriver")
 driver = webdriver.Chrome(service=s, options=options)
 
-str_search = "https://www.mvideo.ru/noutbuki-planshety-komputery-8/noutbuki-118?reff=menu_main"
+str_search = "https://www.mvideo.ru/portativnoe-audio-25/diktofony-83?reff=menu_main&utm_source=web.telegram.org&utm_medium=referral&utm_campaign=web.telegram.org&utm_referrer=web.telegram.org"
 try:
     driver.get(str_search)
 
     time.sleep(2)
 
     try:
-        print("Ща")
+        #print("Ща")
         button = driver.find_element(By.CLASS_NAME, 'location.ng-tns-c110-1')
 
         #button = driver.find_element(By.CLASS_NAME, "location ng-tns-c110-1")
@@ -130,7 +130,6 @@ try:
             n = n + 1
 
     filename = 'parse_result.csv'
-
 
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
