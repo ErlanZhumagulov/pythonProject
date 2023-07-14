@@ -24,16 +24,15 @@ try:
         print("Ща")
         button = driver.find_element(By.CLASS_NAME, 'location.ng-tns-c110-1')
 
-        #button = driver.find_element(By.CLASS_NAME, "location ng-tns-c110-1")
         print("Нажимаем кнопку выбора регионов")
         # Нажатие на кнопку
         button.click()
 
         time.sleep(0.3)
         cities = driver.find_elements(By.CLASS_NAME, "location-select__location")
-        for select_sity in cities:
-            if select_sity.text == "Саратов":
-                button = select_sity
+        for select_city in cities:
+            if select_city.text == "Саратов":
+                button = select_city
                 print("Был выбран Саратов")
 
         button.click()
@@ -75,7 +74,7 @@ try:
             # Пауза для прогрузки элементов
             time.sleep(0.2)
 
-            items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
+            items = driver.find_elements(By.CLASS_NAME, 'product-title__text')
             if len(items) == 24:
                 break
 
@@ -89,8 +88,6 @@ try:
                 print(len(items))
                 break
 
-
-        items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
         prices = driver.find_elements(By.CLASS_NAME, 'price__main-value')
         names = driver.find_elements(By.CLASS_NAME, 'product-title__text')
         price_array = [price.text for price in prices]
