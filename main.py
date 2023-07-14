@@ -62,6 +62,8 @@ try:
         time.sleep(0.5)
 
         last_page_stopper = 0
+
+        items = 0
         while True:
             try:
                 button = driver.find_element(By.CLASS_NAME, "mobile-notification__button")
@@ -76,8 +78,14 @@ try:
             time.sleep(0.2)
 
             items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
+
+            if len(items) == 0:
+                items = driver.find_elements(By.CLASS_NAME, 'product-card__notification-preorder.ng-star-inserted')
+                # print("Вычисляем иначе")
+
             if len(items) == 24:
                 break
+
 
             last_page_stopper = last_page_stopper + 1
             if n == pagesCount and last_page_stopper == 50:
@@ -90,7 +98,7 @@ try:
                 break
 
 
-        items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
+        #items = driver.find_elements(By.TAG_NAME, 'mvid-plp-product-card')
         prices = driver.find_elements(By.CLASS_NAME, 'price__main-value')
         names = driver.find_elements(By.CLASS_NAME, 'product-title__text')
         price_array = [price.text for price in prices]
