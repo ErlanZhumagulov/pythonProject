@@ -131,6 +131,7 @@ try:
 
     filename = 'parse_result.csv'
 
+
     with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['Наименование', 'Цена'])
